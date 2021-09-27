@@ -1,0 +1,495 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Titillium Web", sans-serif;
+}
+.container-fluid {
+  background-color: #e7ecf3;
+  padding-bottom: 20px;
+}
+
+.navBar {
+  height: 75px;
+  background-color: white;
+  box-shadow: 0 0 4px 2px #e7e7e7;
+}
+
+.navMenu {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.navMenu .menuIcon {
+  font-size: 1.2rem;
+  color: #00003e;
+  cursor: pointer;
+}
+.navMenu div input {
+  width: 320px;
+  padding: 2px 10px 2px 28px;
+  outline: none;
+  border: none;
+  color: #00003e;
+  background-color: white;
+}
+.searchIcon {
+  color: #00003e;
+  position: relative;
+  top: 0px;
+  font-size: 0.8rem;
+  left: 18px;
+}
+.contactMan {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.contactMan div {
+  width: 200px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+}
+.contactMan img {
+  width: 50px;
+  padding: 2px;
+  background-color: #e7e7e7;
+  border-radius: 50%;
+  z-index: 2;
+  cursor: pointer;
+}
+.contactMan h6 {
+  color: #00003e;
+  font-size: 0.8rem;
+  margin-top: 12px;
+  padding: 5px 20px 5px 20px;
+  background-color: #e7e7e7;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin-left: -25px;
+  cursor: pointer;
+}
+.contactMan h6 .downIcon {
+  margin-left: 15px;
+  font-size: 0.7rem;
+}
+
+.contactMan a {
+  text-decoration: none;
+  color: white;
+  background-color: #4fc1ee;
+  border-radius: 20px;
+  padding: 5px 25px;
+  font-size: 0.9em;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+.contactMan a:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* content component */
+.card-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  cursor: pointer;
+}
+.spanDiv {
+  width: 70px;
+  position: absolute;
+  left: 0px;
+  top: 0;
+  height: 60px;
+  border-right: 1px solid #dbdbdb;
+  border-bottom: 1px solid #dbdbdb;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.spanDiv span {
+  color: #4fc1ee;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.titleDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.titleDiv h4 {
+  font-size: 1rem;
+  color: #00003e;
+}
+.titleDiv h6 {
+  font-size: 0.6rem;
+  color: #b1aeae;
+}
+
+/* menu Components */
+
+.menuComp {
+  width: 340px;
+  height: 100vh;
+  background-color: #00003e;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: -340px;
+  z-index: 10;
+  padding-top: 20px;
+  transition: all 0.6s ease-in-out;
+}
+.menuComp.active {
+  left: 0;
+  box-shadow: 0 0 3px 2px #050316;
+}
+.menuComp h2 {
+  color: #4fc1ee;
+  font-size: 1.5rem;
+  margin-right: 70px;
+}
+.menuComp ul {
+  margin-top: -10px;
+  height: 420px;
+  width: 100%;
+  display: grid;
+  padding: 20px 0;
+}
+.menuComp ul li {
+  width: 100%;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menuComp ul li a {
+  text-decoration: none;
+  color: #e7e6e6;
+  width: 100%;
+  height: 100%;
+  background-color: #00003e;
+  padding: 12px 0 0 120px;
+  transition: all 0.1s;
+}
+.menuComp ul li a:hover {
+  color: #4fc1ee;
+  background-color: #00001e;
+}
+
+.menuCompBack {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  z-index: 8;
+  background-color: rgba(67, 67, 68, 0.5);
+  transition: all 2s;
+}
+.menuCompBack.active {
+  display: block;
+}
+.closeMenu {
+  position: absolute;
+  top: 20px;
+  left: 280px;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.menuRightIcon {
+  position: absolute;
+  color: #4fc1ee;
+  font-size: 1.2rem;
+  left: -3px;
+  z-index: -1;
+}
+.menuComp ul li a:hover + .menuRightIcon {
+  z-index: 5;
+}
+.menuTypeIcon {
+  margin-left: -50px;
+  margin-right: 20px;
+  font-size: 1.2rem;
+  color: #4fc1ee;
+}
+.newstag {
+  position: absolute;
+  background-color: #4fc1ee;
+  color: white;
+  padding: 2px 12px;
+  border-radius: 10px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin-left: 180px;
+  pointer-events: none;
+}
+
+/* Charts components */
+.chartsRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.chartDiv {
+  position: relative;
+  z-index: 5;
+  background-color: white;
+  padding: 20px 40px;
+  border: 1px solid #dbdbdb;
+}
+
+/* Foot components */
+.footRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footChart {
+  position: relative;
+  z-index: 5;
+  background-color: white;
+  padding: 20px 40px;
+  border: 1px solid #dbdbdb;
+}
+.footColClass {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+}
+.footTitle {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: space-evenly;
+  border: 1px solid #dbdbdb;
+  border-bottom: none;
+  align-items: center;
+}
+.footTitle h2 {
+  font-size: 1.2rem;
+  color: #00003e;
+}
+
+.footTitle h5 {
+  color: #b4afaf;
+  font-size: 0.9em;
+  cursor: pointer;
+}
+
+.footTitle h5 .footTitleIcon {
+  color: #4fc1ee;
+  font-size: 0.9em;
+}
+.footColClass2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-bottom: 2px;
+  flex-direction: column;
+}
+.titleRecent {
+  background-color: white;
+  padding: 0px 10px 2px 30px;
+  width: 100%;
+  border: 1px solid #dbdbdb;
+}
+.titleRecent h3 {
+  font-size: 1rem;
+  margin-top: 4px;
+}
+.line {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  background-color: white;
+  border: 1px solid #dbdbdb;
+  width: 100%;
+  padding: 6px 2px 0 2px;
+  border-top: none;
+  border-bottom: 1px dashed #dbdbdb;
+  transition: all 0.2s;
+}
+.line:hover {
+  background-color: #dbdbdb;
+}
+.line:hover .span2 {
+  color: yellow;
+}
+.line span {
+  font-size: 1.2rem;
+}
+.line .span1 {
+  color: #4fc1ee;
+}
+.line .span2 {
+  color: #b4afaf;
+}
+.line .span3 {
+  color: #b4afaf;
+  transition: all 0.2s;
+}
+.line .span3:hover {
+  color: red;
+}
+.line h3 {
+  font-size: 0.8rem;
+  color: #00003e;
+  width: 350px;
+  margin-top: 10px;
+}
+.line h3 span {
+  font-size: 0.6rem;
+  color: #b1aeae;
+}
+.seeAllTag {
+  width: 100%;
+  text-align: center;
+  background-color: white;
+  padding: 5px 0;
+  border: 1px solid #dbdbdb;
+  border-top: none;
+}
+.seeAllTag span {
+  font-size: 0.8rem;
+  color: #4fc1ee;
+  cursor: pointer;
+}
+
+@media (max-width: 810px) {
+  .navBar {
+    height: 50px;
+    background-color: white;
+    box-shadow: 0 0 4px 2px #e7e7e7;
+  }
+  .navMenu {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .navMenu .menuIcon {
+    font-size: 0.9rem;
+    color: #00003e;
+    cursor: pointer;
+  }
+  .navMenu div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+  }
+  .navMenu div input {
+    width: 100%;
+    font-size: 0.7em;
+    padding: 2px 5px 2px 20px;
+  }
+  .navMenu div .searchIcon {
+    font-size: 0.56em;
+  }
+
+  .contactMan div {
+    width: 160px;
+    margin-left: -70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .contactMan img {
+    width: 30px;
+    margin-right: 10px;
+  }
+  .contactMan h6 {
+    height: 25px;
+    width: 120px;
+    font-size: 0.6rem;
+  }
+  .contactMan h6 .downIcon {
+    font-size: 0.5rem;
+  }
+
+  .contactMan a {
+    padding: 4px 15px;
+    font-size: 0.6em;
+    border-radius: 15px;
+  }
+
+  .titleRecent h3 {
+    font-size: 0.8rem;
+    margin-top: 4px;
+  }
+
+  .line span {
+    font-size: 0.8rem;
+  }
+
+  .line h3 {
+    font-size: 0.65rem;
+  }
+  .line h3 span {
+    font-size: 0.45rem;
+  }
+  .seeAllTag span {
+    font-size: 0.6rem;
+  }
+  .footTitle h2 {
+    font-size: 0.8rem;
+    margin-top: 10px;
+  }
+
+  .footTitle h5 {
+    font-size: 0.6rem;
+    margin-top: 10px;
+  }
+
+  .footTitle h5 .footTitleIcon {
+    font-size: 0.7em;
+  }
+}
+
+@media (max-width: 990px) {
+  .spanDiv {
+    width: 50px;
+    height: 45px;
+  }
+  .spanDiv span {
+    font-size: 0.75rem;
+  }
+  .titleDiv h4 {
+    font-size: 0.7rem;
+  }
+  .titleDiv h6 {
+    font-size: 0.48rem;
+  }
+}
+@media (max-width: 750px) {
+  .spanDiv {
+    width: 80px;
+    height: 70px;
+  }
+  .spanDiv span {
+    font-size: 1.2rem;
+  }
+  .titleDiv h4 {
+    font-size: 1.2rem;
+  }
+  .titleDiv h6 {
+    font-size: 0.9rem;
+  }
+}
